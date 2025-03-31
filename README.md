@@ -20,7 +20,8 @@ Usaremos o CloudShell para executar os comandos.
 export SQS_NAME='fila-nomesobrenome'
 ```
 
-3 - Execute o comando abaixo. Este comando irá criar uma fila do SQS, com o nome salvo anteriormente e irá armazenar a URL da fila, que iremos utilizar nos scripts seguintes.
+3 - Execute o comando abaixo. Este comando irá criar uma fila do SQS, com o nome salvo anteriormente e irá armazenar a URL da fila no CloudShell mesmo em abas adicionais, que iremos utilizar nos scripts seguintes.
+
 ```
 echo 'export SQS_QUEUE_URL='$(aws sqs create-queue \
     --queue-name $SQS_NAME \
@@ -33,11 +34,6 @@ echo 'export SQS_QUEUE_URL='$(aws sqs create-queue \
 git clone https://github.com/RafaelWillians/LabIntegracaoSQS.git
 cd LabIntegracaoSQS/
 ```
-
-5 -  Antes de executarmos os scripts Python, precisamos editá-los, para apontarmos para a fila correta.
-
-Primeiro, edite o arquivo receber.py com o comando abaixo.
-
 
 6 - Execute o comando abaixo no CloudShell e o script receber.py irá checar constantemente se chega alguma mensagem no SQS.
 ```

@@ -1,12 +1,12 @@
 import boto3
 
 sqs = boto3.client("sqs")
-queue_url = 'fila-nomesobrenome'
+sqs_queue_url = os.getenv("SQS_QUEUE_URL")
 
 while True:
     print("Recebendo mensagens")
     response = sqs.receive_message(
-        QueueUrl=queue_url,
+        QueueUrl=sqs_queue_url,
         MaxNumberOfMessages=2,
         WaitTimeSeconds=5,
     )
@@ -16,6 +16,6 @@ while True:
             print(f"Corpo mensagem: {message['Body']}")
             print(f"Removendo mensagem: {message['MessageId']}")
             sqs.delete_message(
-                QueueUrl=queue_url,
+                QueueUrl=sqs_queue_url,
                 ReceiptHandle=message['ReceiptHandle']
             )
