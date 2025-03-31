@@ -14,7 +14,7 @@ Usaremos o CloudShell para executar os comandos.
 
 2 - Copie o comando abaixo para um editor de texto, mude a parte de fila-nomesobrenome para colocar o seu nome e sobrenome. Este comando irá salvar esse nome para usarmos em seguida.
 
-    Exemplo: fila-rafaelteste
+Exemplo: fila-rafaelteste
 
 ```
 export SQS_NAME='fila-nomesobrenome'
@@ -44,12 +44,10 @@ python3 receber.py
 
 ![cloudshell-aba](/img/cloudshell-aba.PNG)
 
-8. Na aba nova, execute o comando abaixo, para executar o script enviar.py.
-Este script irá enviar mensagens.
-
-
+8 - Na aba nova, execute o comando abaixo, para executar o script enviar.py.
+Este script irá enviar uma mensagem.
 ```
-
+python3 enviar.py
 ```
 
 
