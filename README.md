@@ -70,7 +70,7 @@ python3 atualizar_status.py
 
 ## Passo 3 - Excluir os recursos
 
-12 - Agora, exclua a fila do SQS executando o comando abaixo.
+12 - Para parar a execução do script, mantenha na primeira aba do CloudShell, onde foram mostradas as mensagens. Clique no meio onde aparecem os textos do CloudShell e pressione CTRL+C no teclado. Após isso, exclua a fila do SQS executando o comando abaixo.
 ```
 aws sqs delete-queue --queue-url $SQS_QUEUE_URL
 ```
