@@ -12,37 +12,43 @@ Usaremos o CloudShell para executar os comandos.
 
 ![aws-cloudshell1](/img/aws-cloudshell1.png)
 
-2 - Copie o comando abaixo para um editor de texto, mude a parte de [fila-nomesobrenome] para colocar o seu nome e sobrenome, sem o sinal de [ ].
+2 - Copie o comando abaixo para um editor de texto, mude a parte de fila-nomesobrenome para colocar o seu nome e sobrenome. Este comando irá salvar esse nome para usarmos em seguida.
 
     Exemplo: fila-rafaelteste
 
 ```
-aws sqs create-queue \
-    --queue-name [fila-nomesobrenome] \
-    --attributes VisibilityTimeout=30,MessageRetentionPeriod=1800
+export SQS_NAME='fila-nomesobrenome'
 ```
 
-3 -  Execute os comandos abaixo no CloudShell, para baixarmos os arquivos do lab e carregarmos a pasta baixada.
+3 - Execute o comando abaixo. Este comando irá criar uma fila do SQS, com o nome salvo anteriormente e irá armazenar a URL da fila, que iremos utilizar nos scripts seguintes.
+```
+echo 'export SQS_QUEUE_URL='$(aws sqs create-queue \
+    --queue-name $SQS_NAME \
+    --attributes VisibilityTimeout=30,MessageRetentionPeriod=1800 \
+    --query 'QueueUrl' --output text) >> ~/.bashrc && source ~/.bashrc
+```
+
+4 -  Execute os comandos abaixo no CloudShell, para baixarmos os arquivos do lab e carregarmos a pasta baixada.
 ```
 git clone https://github.com/RafaelWillians/LabIntegracaoSQS.git
 cd LabIntegracaoSQS/
 ```
 
-4 -  Antes de executarmos os scripts Python, precisamos editá-los, para apontarmos para a fila correta.
+5 -  Antes de executarmos os scripts Python, precisamos editá-los, para apontarmos para a fila correta.
 
 Primeiro, edite o arquivo receber.py com o comando abaixo.
 
 
-5 - Execute o comando abaixo no CloudShell e o script receber.py irá checar constantemente se chega alguma mensagem no SQS.
+6 - Execute o comando abaixo no CloudShell e o script receber.py irá checar constantemente se chega alguma mensagem no SQS.
 ```
 python3 receber.py
 ```
 
-6 - Agora abra uma nova aba no CloudShell, no sinal de + azul, conforme imagem abaixo. Ao clicar no sinal de +, irá perguntar o ambiente. Clique no nome da região como no exemplo abaixo.
+7 - Agora abra uma nova aba no CloudShell, no sinal de + azul, conforme imagem abaixo. Ao clicar no sinal de +, irá perguntar o ambiente. Clique no nome da região como no exemplo abaixo.
 
 ![cloudshell-aba](/img/cloudshell-aba.PNG)
 
-7. Na aba nova, execute o comando abaixo, para executar o script enviar.py.
+8. Na aba nova, execute o comando abaixo, para executar o script enviar.py.
 Este script irá enviar mensagens.
 
 
