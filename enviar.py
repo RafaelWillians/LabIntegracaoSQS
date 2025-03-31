@@ -1,4 +1,5 @@
 import boto3
+import os
 
 # Obtem a URL da fila SQS por uma variavel de ambiente.
 sqs_queue_url = os.getenv("SQS_QUEUE_URL")
