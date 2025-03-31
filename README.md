@@ -71,7 +71,7 @@ python3 atualizar_status.py
 aws sqs delete-queue --queue-url $SQS_QUEUE_URL
 ```
 
-13 - No CloudShell ainda, clique no botão azul Ações e clique para Excluir.
+13 - No CloudShell ainda, clique no botão azul Ações, clique para Excluir e, na mensagem que aparecer, confirme a exclusão.
 Isso irá excluir o ambiente que usamos, ou seja, tanto as variáveis de ambiente que configuramos quanto os arquivos baixados serão apagados.
 
 ![cloudshell-excluir-ambiente](/img/cloudshell-excluir-ambiente.PNG)
