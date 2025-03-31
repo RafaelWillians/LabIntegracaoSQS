@@ -66,19 +66,17 @@ python3 atualizar_status.py
 
 ![cloudshell-atualizar-status](/img/cloudshell-atualizar-status.PNG)
 
-12 - Agora, iremos excluir os arquivos e a fila do SQS. Ainda na primeira aba, clique no meio dela com o mouse e aperte as teclas CTRL e C no teclado, para parar de executar o recebimento das mensagens.
-Depois, execute os comandos abaixo.
-```
-cd ..
-rm -rf LabIntegracaoSQS
-```
-
-13 - Agora, exclua a fila do SQS executando o comando abaixo.
+12 - Agora, exclua a fila do SQS executando o comando abaixo.
 ```
 aws sqs delete-queue --queue-url $SQS_QUEUE_URL
 ```
 
-14 - Depois de executar o comando acima, feche o CloudShell.
+13 - No CloudShell ainda, clique no botão azul Ações e clique para Excluir.
+Isso irá excluir o ambiente que usamos, ou seja, tanto as variáveis de ambiente que configuramos quanto os arquivos baixados serão apagados.
+
+![cloudshell-excluir-ambiente](/img/cloudshell-excluir-ambiente.PNG)
+
+14 - Depois, feche o CloudShell.
 Abra o serviço SQS na barra de pesquisa, clique no ícone de menu na parte de cima da tela e verifique se a fila que você criou foi excluída.
 
 ![sqs-tela](/img/sqs-tela.PNG)
