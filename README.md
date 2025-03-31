@@ -20,6 +20,8 @@ Exemplo: fila-rafaelteste
 export SQS_NAME='fila-nomesobrenome'
 ```
 
+**Dica:** sempre confira se os comandos estão sendo executados. Pode ocorrer de, ao colar o comando, precisar pressionar Enter em seguida para executar.
+
 3 - Execute o comando abaixo, copiando e colando direto no CloudShell. Este comando irá criar uma fila do SQS, com o nome salvo anteriormente e irá armazenar a URL da fila no CloudShell mesmo em abas adicionais, que iremos utilizar nos scripts seguintes.
 
 ```
