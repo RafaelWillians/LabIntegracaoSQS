@@ -1,13 +1,11 @@
 import boto3
 
+# Obtem a URL da fila SQS por uma variavel de ambiente.
+sqs_queue_url = os.getenv("SQS_QUEUE_URL")
+
 sqs = boto3.client("sqs")
 
-### ATENÇÃO!
-# Mude o send_message, para escrever uma mensagem 'ola mundo' na fila que você criou
-###
-
-
 response = sqs.send_message(
-    QueueUrl='????'
-    MessageBody='????'
+    QueueUrl=sqs_queue_url
+    MessageBody='Ola, mundo! Sou uma mensagem do SQS!'
 )
