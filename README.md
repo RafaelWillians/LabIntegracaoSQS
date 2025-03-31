@@ -4,7 +4,7 @@ Olá! Nesse lab iremos utilizar o SQS, para integrar 2 scripts em Python. Um scr
 
 Usaremos o CloudShell para executar os comandos.
 
-**Atenção:** sempre confira qual conta você efetuou login. O uso da conta na AWS é de sua inteira responsabilidade!
+**Atenção:** sempre confira qual conta você efetuou login. O uso da conta na AWS é de sua inteira responsabilidade! Sempre que puder durante as etapas, faça prints da tela, para indicar que as concluiu com êxito.
 
 ## Passo 1 - Criar a fila do SQS
 
@@ -51,4 +51,34 @@ cd LabIntegracaoSQS/
 python3 enviar.py
 ```
 
+9 - Clique na aba anterior do CloudShell e irá mostrar a mensagem sendo recebida pelo script.
 
+![cloudshell-mensagem-recebida](/img/cloudshell-mensagem-recebida.PNG)
+
+10 - Agora que tanto enviamos, quanto recebemos a mensagem com o SQS, iremos executar mais um script, para simularmos um processamento assíncrono de uma aplicação. Clique na segunda aba do CloudShell, execute o comando abaixo e depois volte na primeira aba do CloudShell.
+```
+python3 atualizar_status.py
+``` 
+
+11 - Pronto! Você pode olhar o código do arquivo atualizar_status.py aqui deste repositório e ver que, entre uma mensagem e outra, podemos implementar algum código para algum processamento e, para cada etapa de execução, podemos enviar uma mensagem no SQS para indicar o status.
+
+![cloudshell-atualizar-status](/img/cloudshell-atualizar-status.PNG)
+
+12 - Agora, iremos excluir os arquivos e a fila do SQS. Ainda na primeira aba, clique no meio dela com o mouse e aperte as teclas CTRL e C no teclado, para parar de executar o recebimento das mensagens.
+Depois, execute os comandos abaixo.
+```
+cd ..
+rm -rf LabIntegracaoSQS
+```
+
+13 - Agora, exclua a fila do SQS executando o comando abaixo.
+```
+aws sqs delete-queue --queue-url $SQS_QUEUE_URL
+```
+
+14 - Depois de executar o comando acima, feche o CloudShell.
+Abra o serviço SQS na barra de pesquisa, clique no ícone de menu na parte de cima da tela e verifique se a fila que você criou foi excluída.
+
+![sqs-tela](/img/sqs-tela.PNG)
+
+15 - Se a sua fila foi excluída com sucesso, tudo pronto! Lab finalizado com sucesso!
