@@ -8,10 +8,19 @@ Usaremos o CloudShell para executar os comandos.
 
 ## Passo 1 - Criar a fila do SQS
 
-1. Abra o console de gerenciamento da AWS e depois o CloudShell.
+1. Abra o console de gerenciamento da AWS e depois abra o CloudShell.
 ![aws-cloudshell1](/img/aws-cloudshell1.png)
 
-2. 
+2. Copie o comando abaixo para um editor de texto, mude
+
+
+```
+aws sqs create-queue \
+    --queue-name <fila-nomesobrenome> \
+    --atributes VisibilityTimeout=30,MessageRetentionPeriod=1800
+```
+
+
 
 
 
