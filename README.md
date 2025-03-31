@@ -44,9 +44,10 @@ python3 receber.py
 
 ![cloudshell-aba](/img/cloudshell-aba.PNG)
 
-8 - Na aba nova, execute o comando abaixo, para executar o script enviar.py.
+8 - Na aba nova, execute os comandos abaixo, para abrir o diretorio LabIntegracaoSQS e executar o script enviar.py dentro dele.
 Este script irá enviar uma mensagem.
 ```
+cd LabIntegracaoSQS/
 python3 enviar.py
 ```
 
