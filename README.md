@@ -83,4 +83,8 @@ Abra o serviço SQS na barra de pesquisa, clique no ícone de menu na parte de c
 
 ![sqs-tela](/img/sqs-tela.PNG)
 
-15 - Se a sua fila foi excluída com sucesso, tudo pronto! Lab finalizado com sucesso!
+15 - Se a sua fila foi excluída com sucesso, basta deslogar do console de gerenciamento da AWS, clicando no nome da sua conta no canto superior direito e no botão laranja Sair.
+
+![aws-console2](/img/aws-console2.png)
+
+Lab finalizado com sucesso!
