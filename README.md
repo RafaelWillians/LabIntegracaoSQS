@@ -11,12 +11,13 @@ Usaremos o CloudShell para executar os comandos.
 1. Abra o console de gerenciamento da AWS e depois abra o CloudShell.
 ![aws-cloudshell1](/img/aws-cloudshell1.png)
 
-2. Copie o comando abaixo para um editor de texto, mude
+2. Copie o comando abaixo para um editor de texto, mude a parte de [fila-nomesobrenome] para colocar o seu nome e sobrenome, sem o sinal de [ ].
 
+    Exemplo: fila-rafaelteste
 
 ```
 aws sqs create-queue \
-    --queue-name <fila-nomesobrenome> \
+    --queue-name [fila-nomesobrenome] \
     --attributes VisibilityTimeout=30,MessageRetentionPeriod=1800
 ```
 
