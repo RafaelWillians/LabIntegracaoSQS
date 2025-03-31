@@ -11,7 +11,7 @@ sqs = boto3.client("sqs")
 
 # Irá enviar mensagem indicando que o job nao foi iniciado
 response = sqs.send_message(
-    QueueUrl=sqs_queue_url
+    QueueUrl=sqs_queue_url,
     MessageBody='Processamento nao iniciado'
 )
 
@@ -20,7 +20,7 @@ time.sleep(10)
 
 # Irá enviar mensagem indicando que o job foi iniciado
 response = sqs.send_message(
-    QueueUrl=sqs_queue_url
+    QueueUrl=sqs_queue_url,
     MessageBody='Processamento iniciado'
 )
 
@@ -29,6 +29,6 @@ time.sleep(10)
 
 # Irá enviar mensagem indicando que o job nao foi iniciado
 response = sqs.send_message(
-    QueueUrl=sqs_queue_url
+    QueueUrl=sqs_queue_url,
     MessageBody='Processamento concluido'
 )
