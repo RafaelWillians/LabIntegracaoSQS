@@ -17,7 +17,7 @@ Usaremos o CloudShell para executar os comandos.
 ```
 aws sqs create-queue \
     --queue-name <fila-nomesobrenome> \
-    --atributes VisibilityTimeout=30,MessageRetentionPeriod=1800
+    --attributes VisibilityTimeout=30,MessageRetentionPeriod=1800
 ```
 
 
