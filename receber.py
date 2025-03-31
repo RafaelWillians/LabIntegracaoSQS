@@ -1,7 +1,12 @@
 import boto3
 
-sqs = boto3.client("sqs")
+# Obtem a URL da fila SQS por uma variavel de ambiente.
 sqs_queue_url = os.getenv("SQS_QUEUE_URL")
+
+sqs = boto3.client("sqs")
+
+# Verifica a cada 5 segundos se ha mensagem na fila 
+# e recebe no maximo 2 mensagens por vez
 
 while True:
     print("Recebendo mensagens")
