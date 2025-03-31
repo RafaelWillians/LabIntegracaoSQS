@@ -17,8 +17,8 @@ while True:
         WaitTimeSeconds=5,
     )
 
-    if "Mensagens" in response:
-        for message in response["Mensagens"]:
+    if "Messages" in response:
+        for message in response["Messages"]:
             print(f"Corpo mensagem: {message['Body']}")
             print(f"Removendo mensagem: {message['MessageId']}")
             sqs.delete_message(
