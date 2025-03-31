@@ -1,16 +1,17 @@
-# AWS Repo Template
+# Lab Integração do SQS com Python
 
-Repo template for use with AWS CLI, compatible with Codespaces, GitPod and DevContainer extension (for VSCode).
+Olá! Nesse lab iremos utilizar o SQS, para integrar 2 scripts em Python. Um script irá receber as mensagens da fila e outro irá enviar as mensagens.
 
-Template de repositório para usar com AWS CLI, compatível com Codespaces, GitPod e extensão DevContainer (para VSCode).
+Usaremos o CloudShell para executar os comandos.
 
-## Extensões
-* AWS CLI
-* Draw.io Integration
-* Git Graph
-* Git-log
-* GitHub Actions
-* Github Markdown Preview
-* Hashicorp Terraform
-* Live Server
-* GitHub CLI
+**Atenção:** sempre confira qual conta você efetuou login. O uso da conta na AWS é de sua inteira responsabilidade!
+
+## Passo 1 - Criar a fila do SQS
+
+1. Abra o console de gerenciamento da AWS e depois o CloudShell.
+![aws-cloudshell1](/img/aws-cloudshell1.png)
+
+2. 
+
+
+
