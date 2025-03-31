@@ -31,6 +31,8 @@ echo 'export SQS_QUEUE_URL='$(aws sqs create-queue \
     --query 'QueueUrl' --output text) >> ~/.bashrc && source ~/.bashrc
 ```
 
+## Passo 2 - Baixar e executar os scripts Python
+
 4 -  Execute também os comandos abaixo no CloudShell, para baixarmos os arquivos do lab e carregarmos a pasta baixada.
 ```
 git clone https://github.com/RafaelWillians/LabIntegracaoSQS.git
@@ -65,6 +67,8 @@ python3 atualizar_status.py
 11 - Pronto! Você pode olhar o código do arquivo atualizar_status.py aqui deste repositório e ver que, entre uma mensagem e outra, podemos implementar algum código para algum processamento e, para cada etapa de execução, podemos enviar uma mensagem no SQS para indicar o status.
 
 ![cloudshell-atualizar-status](/img/cloudshell-atualizar-status.PNG)
+
+## Passo 3 - Excluir os recursos
 
 12 - Agora, exclua a fila do SQS executando o comando abaixo.
 ```
